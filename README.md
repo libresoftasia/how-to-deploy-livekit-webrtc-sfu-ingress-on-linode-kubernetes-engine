@@ -1,1 +1,1 @@
-# how-to-deploy-livekit-webrtc-sfu-ingress-on-linode-kubernetes-engine
+# how to deploy LiveKit webRTC SFU in Linode Kubernetes engine
