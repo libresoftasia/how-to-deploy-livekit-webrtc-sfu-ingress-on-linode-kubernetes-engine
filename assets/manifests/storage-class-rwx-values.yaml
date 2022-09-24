@@ -9,6 +9,6 @@ metadata:
       - name: NSFServerType
         value: "kernel"
       - name: BackendStorageClass
-        value: "do-block-storagelinode-block-storage"
+        value: "linode-block-storage"
 provisioner: openebs.io/nfsrwx
 reclaimPolicy: Delete
