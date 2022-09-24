@@ -55,3 +55,11 @@ You can watch the status by running
 ```
 kubectl --namespace default get services -o wide -w ingress-nginx-controller
 ```
+You will get an output like below:
+
+{{< output >}}
+```
+NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE   SELECTOR
+ingress-nginx-controller   LoadBalancer   10.128.248.194   172.104.37.25   80:31535/TCP,443:32161/TCP   21h   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
+
+{{< output >}}```
