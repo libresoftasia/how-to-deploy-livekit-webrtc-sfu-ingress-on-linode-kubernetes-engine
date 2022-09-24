@@ -50,3 +50,5 @@ An example Ingress that makes use of the controller:
         secretName: example-tls
  
 ```
+{{</ output >}}
+
