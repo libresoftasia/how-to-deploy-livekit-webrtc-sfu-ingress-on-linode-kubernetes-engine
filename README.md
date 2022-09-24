@@ -1,4 +1,4 @@
-# how to deploy LiveKit WebRTC SFU in Linode Kubernetes engine
+# How to deploy LiveKit WebRTC SFU in Linode Kubernetes Engine
 
 ## Install the NGINX Ingress Controller
 
@@ -12,11 +12,11 @@ If you want to learn more about the NGINX Ingress Controller, check out our guid
 ```
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
-1.  Update your Helm repositories.
+2.  Update your Helm repositories.
 ```
 helm repo update
 ```
-1.  Install the NGINX Ingress Controller. This installation will result in a Linode NodeBalancer being created.
+3.  Install the NGINX Ingress Controller. This installation will result in a Linode NodeBalancer being created.
 ```
 helm install ingress-nginx ingress-nginx/ingress-nginx
 ```
@@ -58,8 +58,7 @@ kubectl --namespace default get services -o wide -w ingress-nginx-controller
 You will get an output like below:
 
 {{< output >}}
-```
 NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE   SELECTOR
 ingress-nginx-controller   LoadBalancer   10.128.248.194   172.104.37.25   80:31535/TCP,443:32161/TCP   21h   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
 
-{{< output >}}```
+{{< output >}}
