@@ -5,7 +5,7 @@
 In this section you will use Helm to install the NGINX Ingress Controller on your Kubernetes Cluster. Installing the NGINX Ingress Controller will create Linode NodeBalancers that your cluster can make use of to load balance traffic to your example application.
 
 {{< note >}}
-If you want to learn more about the NGINX Ingress Controller, check out our guide [Deploying NGINX Ingress on Linode Kubernetes Engine].(/docs/guides/how-to-deploy-nginx-ingress-on-linode-kubernetes-engine/).
+If you want to learn more about the NGINX Ingress Controller, check out Linode guide [Deploying NGINX Ingress on Linode Kubernetes Engine].(/docs/guides/how-to-deploy-nginx-ingress-on-linode-kubernetes-engine/).
 {{</ note >}}
 
 1.  Add the following Helm ingress-nginx repository to your Helm repos.
@@ -60,5 +60,10 @@ You will get an output like below:
 {{< output >}}
 NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE   SELECTOR
 ingress-nginx-controller   LoadBalancer   10.128.248.194   172.104.37.25   80:31535/TCP,443:32161/TCP   21h   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
+{{</ output >}}
 
-{{< output >}}
+
+
+
+
+
