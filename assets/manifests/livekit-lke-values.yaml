@@ -6,14 +6,17 @@ livekit:
   rtc:
     use_external_ip: true
   redis:
-    address: <redis-host>:6379
+    address: redis-master:6379
+    # export REDIS_PASSWORD=$(kubectl get secret --namespace redis redis -o jsonpath="{.data.redis-password}" | base64 -d)
+    password: ${REDIS_PASSWORD}
+
   keys:
-    <your-api-key>: <your-secret>
+    APIFZgMqHpxZrfk: esBY2z6aSO2MRimWzl0Ffcm1LIV22r0xN9UXNphc9Bk
   turn:
     enabled: true
-    domain: <your-turn-domain>
-    tls_port: 3478
-    secretName: <turn-tls-secret>
+    domain: turn1.livekit.cyber.lk
+    tls_port: 443
+    secretName: turn1-tls-secret
 
 loadBalancer:
   type: do
@@ -23,12 +26,15 @@ loadBalancer:
   clusterIssuer: letsencrypt-prod
   tls:
     - hosts:
-        - <your-primary-domain>
-      secretName: <secret-name>
+        - srv1.livekit.cyber.lk
+      secretName: srv1-tls-secret
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 
 autoscaling:
   enabled: true
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 60
 
