@@ -1,2 +1,2 @@
 nfsStorageClass:
-  backendStorageClass: "linode-block-storage-retain "
+  backendStorageClass: "linode-block-storage"
